@@ -2,6 +2,9 @@
 {{ partial "header.html" . }}
 {{ partial "about.html" . }}
 {{ partial "services.html" . }}
-{{ partial "pricing.html" . }}
-{{ partial "contact.html" . }}
+
+{{ if isset .Site.Params "stayintouch" }}
+ {{ partial "contact.html" . }}
+{{ end }}
+
 {{ partial "footer.html" . }}

@@ -9,29 +9,31 @@
                     </li>
                     <li class="footer-menu-divider">&sdot;</li>
                     <li>
+		{{ if isset .Site.Params "aboutdesc" }}
+                        <a class="page-scroll" href="#about">{{ .Site.Params.aboutdesc }}</a>
+		{{ else }}
                         <a class="page-scroll" href="#about">About</a>
+		{{ end }}
                     </li>
                     <li class="footer-menu-divider">&sdot;</li>
                     <li>
+                {{ if isset .Site.Params "servicesdesc" }}
+                        <a class="page-scroll" href="#services">{{ .Site.Params.servicesdesc }}</a>
+                {{ else }}
                         <a class="page-scroll" href="#services">Services</a>
+                {{ end }}
                     </li>
-                    {{ range where .Data.Pages "Section" "pricing" | first 1 }}
-                    <li class="footer-menu-divider">&sdot;</li>
-                    <li>
-                        <a class="page-scroll" href="#pricing">Pricing</a>
-                    </li>
-                    {{ end }}
                     {{ if isset .Site.Params "social" }}
                     <li class="footer-menu-divider">&sdot;</li>
                     <li>
-                        <a class="page-scroll" href="#contact">Contact</a>
+                        <a class="page-scroll" href="#contact">Kontakt</a>
                     </li>
                     {{ end }}
                 </ul>
                 <p class="copyright text-muted small">Copyright &copy; {{ .Title }} All Rights Reserved</p>
             </div>
             <div class="col-md-4">
-		Built with <a href="http://gohugo.io">Hugo</a> and the
+		Built with <a href="https://gohugo.io">Hugo</a> and the
 		<a href="https://github.com/crakjie/landing-page-hugo">landing-page-hugo</a>
 		theme.
             </div>
